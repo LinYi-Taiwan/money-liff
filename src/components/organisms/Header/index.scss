@@ -1,0 +1,28 @@
+.nav-wrapper {
+    width: 100%;
+    height: 56px;
+    & .logo {
+        display: block;
+        float: left;
+        width: 100px;
+        height: 24px;
+    }
+    & .profile {
+        float: right;
+        display: flex;
+        & .sticker {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            // background-color: #ebefff;
+        }
+        & .user-name {
+            font-family: NotoSansCJKTC;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            text-align: right;
+            color: #7c7c7c;
+        }
+    }
+}
