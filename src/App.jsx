@@ -11,8 +11,9 @@ function App() {
         liff.init({
             liffId: import.meta.env.VITE_LIFF_ID,
         })
-            .then((e) => {
-                setProfile(e);
+            .then(() => {
+                console.log(liff.getDecodedIDToken());
+                setProfile(liff.getDecodedIDToken());
                 setMessage("LIFF init succeeded.");
             })
             .catch((e) => {
@@ -25,7 +26,7 @@ function App() {
         <div className="App">
             <h1>create-liff-app</h1>
             {message && <p>{message}</p>}
-            {message && <p>{profile}</p>}
+            {message && <p>info: {profile}</p>}
             {error && (
                 <p>
                     <code>{error}</code>
