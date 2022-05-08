@@ -7,6 +7,9 @@ export const getProfile = createAsyncThunk("liff/getProfile", async () => {
             liffId: import.meta.env.VITE_LIFF_ID,
         })
         .then(() => {
+            if (!liff.isLoggedIn()) {
+                liff.login();
+            }
             return liff.getDecodedIDToken();
         })
         .catch((e) => {

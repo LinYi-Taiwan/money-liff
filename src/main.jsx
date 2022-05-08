@@ -9,7 +9,6 @@ ReactDOM.render(
         <Provider store={store}>
             <Router history={history} store={store} />
         </Provider>
-        ,
     </React.StrictMode>,
     document.getElementById("root")
 );

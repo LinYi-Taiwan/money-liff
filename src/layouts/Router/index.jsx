@@ -12,15 +12,13 @@ const Loading = () => <div>Loading...</div>;
 const Router = ({ routes, history, store }) => {
     // const { loading, component } = useRouter(routes, history, store);
     const loading = false;
-    return (
-        <App>
-            {loading ? (
-                <Loading />
-            ) : (
-                <Suspense fallback={<Loading />}>{<Liff />}</Suspense>
-            )}
-        </App>
+    const renderComponent = loading ? (
+        <Loading />
+    ) : (
+        <Suspense fallback={<Loading />}>{<Liff />}</Suspense>
     );
+
+    return <App children={renderComponent} />;
 };
 
 export default Router;
