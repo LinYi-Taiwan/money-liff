@@ -1,0 +1,59 @@
+.overview-wrapper {
+    margin-top: 8px;
+    padding: 8px;
+
+    .statistics {
+        display: flex;
+        height: 146px;
+        padding: 24px 16px;
+
+        & .banner {
+            display: block;
+            margin: auto;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 111, 97, 0.2);
+            border-radius: 50%;
+        }
+    }
+
+    & .description {
+        padding: 20px 0;
+        & .title {
+            font-family: GenJyuuGothic;
+            font-size: 16px;
+            letter-spacing: 1.2px;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        & .value {
+            height: 36px;
+            line-height: 36px;
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #ff6f61;
+            margin-bottom: 16px;
+
+            & span {
+                font-family: GenJyuuGothic;
+                font-size: 14px;
+                letter-spacing: 0.7px;
+                color: #000;
+            }
+        }
+
+        & .hint {
+            font-family: GenJyuuGothic;
+            font-size: 14px;
+            letter-spacing: 0.7px;
+            color: rgba(0, 0, 0, 0.5);
+
+            & span {
+                font-size: 14px;
+                letter-spacing: 0.7px;
+                color: #21bf55;
+            }
+        }
+    }
+}

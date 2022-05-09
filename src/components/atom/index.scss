@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    height: auto;
+    margin: 0 0 8px;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px -2px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+
+    .sticker {
+        width: 48px;
+        height: 48px;
+        border-radius: 40%;
+        margin-right: 8px;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 6px 0;
+        .name {
+            font-family: GenJyuuGothic;
+            font-size: 16px;
+            letter-spacing: 1.2px;
+            color: #000;
+        }
+
+        .detail-container {
+            display: flex;
+            justify-content: space-between;
+
+            .description {
+                font-family: GenJyuuGothic;
+                font-size: 12px;
+                letter-spacing: 0.65px;
+                color: #000;
+            }
+
+            & .engage-date {
+                margin-top: 2px;
+                font-family: GenJyuuGothic;
+                font-size: 12px;
+                letter-spacing: 0.65px;
+                color: #000;
+            }
+        }
+    }
+}

@@ -10,6 +10,7 @@ export const getProfile = createAsyncThunk("liff/getProfile", async () => {
             if (!liff.isLoggedIn()) {
                 liff.login();
             }
+
             return liff.getDecodedIDToken();
         })
         .catch((e) => {
