@@ -23,6 +23,7 @@ function TripSchedule({ tripList }) {
     const clearSelect = () => {
         if (trip) trip.dom.checked = false;
         setTrip(null);
+        setShareMode(false);
     };
 
     return (
@@ -34,8 +35,7 @@ function TripSchedule({ tripList }) {
                             <div
                                 onClick={() => {
                                     dispatch(sendFlexMsg(trip.journey));
-                                    setTrip(null);
-                                    setShareMode(!shareMode);
+                                    clearSelect();
                                 }}
                             >
                                 傳送到群組
