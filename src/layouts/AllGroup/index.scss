@@ -1,6 +1,6 @@
 .group-container {
     display: grid;
     padding: 15px;
-    grid-template-columns: repeat(2, 164px);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
 }
