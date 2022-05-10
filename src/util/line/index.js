@@ -1,5 +1,4 @@
 import liff from "@line/liff/dist/lib";
-import { flexBox } from "../../layouts/LineOnly";
 
 export const lineInit = (liffId = import.meta.env.VITE_LIFF_ID) => {
     return liff.init({

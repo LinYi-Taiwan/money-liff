@@ -1,4 +1,4 @@
-export const flexBox = ({ arrivedTime, destination }) => {
+export const flexBox = ({ arrivedTime, destination, googleMapUri }) => {
     return {
         type: "bubble",
         size: "mega",
@@ -193,6 +193,31 @@ export const flexBox = ({ arrivedTime, destination }) => {
                     cornerRadius: "30px",
                 },
             ],
+        },
+        footer: {
+            type: "box",
+            layout: "vertical",
+            spacing: "sm",
+            contents: [
+                {
+                    type: "button",
+                    style: "link",
+                    height: "sm",
+                    action: {
+                        type: "uri",
+                        label: "查看地圖",
+                        uri: googleMapUri,
+                    },
+                },
+
+                {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [],
+                    margin: "sm",
+                },
+            ],
+            flex: 0,
         },
     };
 };

@@ -24,15 +24,12 @@ export const getProfile = createAsyncThunk("liff/getProfile", async () => {
 export const sendFlexMsg = createAsyncThunk(
     "liff/sendFlexMsg",
     async (journeyData) => {
-        const { arrivedTime, destination } = journeyData;
-        console.log({
-            arrivedTime: arrivedTime,
-            destination: destination,
-        });
+        const { arrivedTime, destination, googleMapUri } = journeyData;
         const data = await lineSendMsgToCurrentChat(
             flexBox({
                 arrivedTime: arrivedTime,
                 destination: destination,
+                googleMapUri: googleMapUri,
             })
         );
         if (data) {
