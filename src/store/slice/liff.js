@@ -1,23 +1,29 @@
 import liff from "@line/liff/dist/lib";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { flexBox } from "@/layouts/LineOnly";
+
+import {
+    lineInit,
+    lineShareTargetPicker,
+    getLineUserProfile,
+} from "../../util/line";
 
 export const getProfile = createAsyncThunk("liff/getProfile", async () => {
-    const data = await liff
-        .init({
-            liffId: import.meta.env.VITE_LIFF_ID,
-        })
-        .then(() => {
-            if (!liff.isLoggedIn()) {
-                liff.login();
-            }
+    await lineInit();
 
-            return liff.getDecodedIDToken();
-        })
-        .catch((e) => {
-            setMessage("LIFF init failed.");
-            setError(`${e}`);
-        });
+    if (!liff.isLoggedIn()) {
+        liff.login();
+    }
+    const data = await getLineUserProfile();
+    console.log("shareResult");
+    return data;
+});
 
+export const sendFlexMsg = createAsyncThunk("liff/sendFlexMsg", async () => {
+    const data = await lineShareTargetPicker(flexBox());
+    if (data) {
+        alert("successful");
+    }
     return data;
 });
 

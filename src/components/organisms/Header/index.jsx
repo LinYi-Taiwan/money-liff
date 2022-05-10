@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { selectProfile } from "@/store/slice/liff";
-import { getProfile } from "@/store/slice/liff";
+import { getProfile, sendFlexMsg } from "@/store/slice/liff";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "@/images/logo.png";
 
@@ -23,6 +23,12 @@ function Header(props) {
                 <A href="/group">
                     <div className="director">首頁</div>
                 </A>
+                <div
+                    className="director"
+                    onClick={() => dispatch(sendFlexMsg())}
+                >
+                    sending msg
+                </div>
             </div>
 
             <div className="profile">
