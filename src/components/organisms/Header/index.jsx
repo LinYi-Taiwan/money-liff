@@ -23,12 +23,12 @@ function Header(props) {
                 <A href="/group">
                     <div className="director">首頁</div>
                 </A>
-                <div
+                {/* <div
                     className="director"
                     onClick={() => dispatch(sendFlexMsg())}
                 >
                     sending msg
-                </div>
+                </div> */}
             </div>
 
             <div className="profile">

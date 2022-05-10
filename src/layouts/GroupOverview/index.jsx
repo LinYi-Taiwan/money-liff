@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../components/atom/Container";
+
 import "./index.scss";
 
 import image from "@/images/logo.png";
@@ -12,7 +13,7 @@ function GroupOverview(props) {
                     <img src={image} alt="" className="banner" />
                 </div>
                 <div className="description">
-                    <div className="title">統計共花費</div>
+                    <div className="title">總計共花費</div>
                     <div className="value">
                         30012 <span>元</span>
                     </div>

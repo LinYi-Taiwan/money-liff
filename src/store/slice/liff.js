@@ -5,6 +5,7 @@ import { flexBox } from "@/layouts/LineOnly";
 import {
     lineInit,
     lineShareTargetPicker,
+    lineSendMsgToCurrentChat,
     getLineUserProfile,
 } from "../../util/line";
 
@@ -14,18 +15,34 @@ export const getProfile = createAsyncThunk("liff/getProfile", async () => {
     if (!liff.isLoggedIn()) {
         liff.login();
     }
+
     const data = await getLineUserProfile();
     console.log("shareResult");
     return data;
 });
 
-export const sendFlexMsg = createAsyncThunk("liff/sendFlexMsg", async () => {
-    const data = await lineShareTargetPicker(flexBox());
-    if (data) {
-        alert("successful");
+export const sendFlexMsg = createAsyncThunk(
+    "liff/sendFlexMsg",
+    async (journeyData) => {
+        const { arrivedTime, destination } = journeyData;
+        console.log({
+            arrivedTime: arrivedTime,
+            destination: destination,
+        });
+        const data = await lineSendMsgToCurrentChat(
+            flexBox({
+                arrivedTime: arrivedTime,
+                destination: destination,
+            })
+        );
+        if (data) {
+            alert("successful");
+        } else {
+            console.log(data);
+        }
+        return data;
     }
-    return data;
-});
+);
 
 export const profile = createSlice({
     name: "profile",

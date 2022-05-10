@@ -1,4 +1,5 @@
 import liff from "@line/liff/dist/lib";
+import { flexBox } from "../../layouts/LineOnly";
 
 export const lineInit = (liffId = import.meta.env.VITE_LIFF_ID) => {
     return liff.init({
@@ -8,6 +9,16 @@ export const lineInit = (liffId = import.meta.env.VITE_LIFF_ID) => {
 
 export const getLineUserProfile = () => {
     return liff.getDecodedIDToken();
+};
+
+export const lineSendMsgToCurrentChat = (flexContent) => {
+    return liff.sendMessages([
+        {
+            type: "flex",
+            altText: `flex box test `,
+            contents: flexContent,
+        },
+    ]);
 };
 
 export const lineShareTargetPicker = (flexContent) => {

@@ -1,0 +1,75 @@
+.travel-route {
+    position: relative;
+    width: 100%;
+    & .liff-action {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        width: fit-content;
+        border-radius: 4px;
+        border: solid 2px #ff6f61;
+        margin-left: 8px;
+        height: 32px;
+        line-height: 29px;
+        font-family: NotoSansCJKTC;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #ff6f61;
+        padding: 0 8px;
+    }
+    & .journey-wrapper {
+        width: 100%;
+        padding: 10px 20px 30px;
+        border-bottom: 1px solid #ff6f61;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        & .date {
+            margin-bottom: 12px;
+        }
+
+        & .task-wrapper {
+            .task {
+                // margin-bottom: 30px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                & span {
+                    margin-right: 50px;
+                }
+                & .circle {
+                    position: absolute;
+                    left: 59.5px;
+                }
+            }
+
+            & .checkbox {
+                position: absolute;
+                display: none;
+                right: 30px;
+                width: 15px;
+                height: 15px;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            .arrive-line {
+                width: 68px;
+                height: 30px;
+                border-right: 2px solid #9d9d9d;
+            }
+
+            &:last-child {
+                & .arrive-line {
+                    display: none;
+                }
+            }
+        }
+    }
+}

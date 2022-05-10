@@ -1,0 +1,10 @@
+.circle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 2.5px solid #2894ff;
+    width: 15px;
+    height: 15px;
+    &.start {
+        border: 2.5px solid #ff359a;
+    }
+}

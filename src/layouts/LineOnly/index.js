@@ -1,4 +1,4 @@
-export const flexBox = () => {
+export const flexBox = ({ arrivedTime, destination }) => {
     return {
         type: "bubble",
         size: "mega",
@@ -12,33 +12,13 @@ export const flexBox = () => {
                     contents: [
                         {
                             type: "text",
-                            text: "FROM",
-                            color: "#ffffff66",
-                            size: "sm",
-                        },
-                        {
-                            type: "text",
-                            text: "Akihabara",
-                            color: "#ffffff",
-                            size: "xl",
-                            flex: 4,
-                            weight: "bold",
-                        },
-                    ],
-                },
-                {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "text",
                             text: "TO",
                             color: "#ffffff66",
                             size: "sm",
                         },
                         {
                             type: "text",
-                            text: "Shinjuku",
+                            text: destination,
                             color: "#ffffff",
                             size: "xl",
                             flex: 4,
@@ -69,7 +49,7 @@ export const flexBox = () => {
                     contents: [
                         {
                             type: "text",
-                            text: "20:30",
+                            text: "Now",
                             size: "sm",
                             gravity: "center",
                         },
@@ -98,7 +78,7 @@ export const flexBox = () => {
                         },
                         {
                             type: "text",
-                            text: "Akihabara",
+                            text: "目前所在地",
                             gravity: "center",
                             flex: 4,
                             size: "sm",
@@ -149,14 +129,14 @@ export const flexBox = () => {
                             ],
                             width: "12px",
                         },
-                        {
-                            type: "text",
-                            text: "Walk 4min",
-                            gravity: "center",
-                            flex: 4,
-                            size: "xs",
-                            color: "#8c8c8c",
-                        },
+                        // {
+                        //     type: "text",
+                        //     text: "Walk 4min",
+                        //     gravity: "center",
+                        //     flex: 4,
+                        //     size: "xs",
+                        //     color: "#8c8c8c",
+                        // },
                     ],
                     spacing: "lg",
                     height: "64px",
@@ -203,7 +183,7 @@ export const flexBox = () => {
                         },
                         {
                             type: "text",
-                            text: "Ochanomizu",
+                            text: destination,
                             gravity: "center",
                             flex: 4,
                             size: "sm",
@@ -253,61 +233,17 @@ export const flexBox = () => {
                             ],
                             width: "12px",
                         },
-                        {
-                            type: "text",
-                            text: "Metro 1hr",
-                            gravity: "center",
-                            flex: 4,
-                            size: "xs",
-                            color: "#8c8c8c",
-                        },
+                        // {
+                        //     type: "text",
+                        //     text: "Metro 1hr",
+                        //     gravity: "center",
+                        //     flex: 4,
+                        //     size: "xs",
+                        //     color: "#8c8c8c",
+                        // },
                     ],
                     spacing: "lg",
                     height: "64px",
-                },
-                {
-                    type: "box",
-                    layout: "horizontal",
-                    contents: [
-                        {
-                            type: "text",
-                            text: "20:40",
-                            gravity: "center",
-                            size: "sm",
-                        },
-                        {
-                            type: "box",
-                            layout: "vertical",
-                            contents: [
-                                {
-                                    type: "filler",
-                                },
-                                {
-                                    type: "box",
-                                    layout: "vertical",
-                                    contents: [],
-                                    cornerRadius: "30px",
-                                    width: "12px",
-                                    height: "12px",
-                                    borderColor: "#6486E3",
-                                    borderWidth: "2px",
-                                },
-                                {
-                                    type: "filler",
-                                },
-                            ],
-                            flex: 0,
-                        },
-                        {
-                            type: "text",
-                            text: "Shinjuku",
-                            gravity: "center",
-                            flex: 4,
-                            size: "sm",
-                        },
-                    ],
-                    spacing: "lg",
-                    cornerRadius: "30px",
                 },
             ],
         },
