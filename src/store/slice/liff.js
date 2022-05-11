@@ -14,10 +14,11 @@ export const getProfile = createAsyncThunk("liff/getProfile", async () => {
 
     if (!liff.isLoggedIn()) {
         liff.login();
+        // alert("not login");
     }
 
-    const data = await getLineUserProfile();
-    console.log("shareResult");
+    const data = getLineUserProfile();
+    console.log("shareResult", data);
     return data;
 });
 
