@@ -1,0 +1,39 @@
+.date-active {
+    color: #fff !important;
+    text-align: center;
+    background-color: #ff6f61 !important;
+}
+
+.date {
+    font-family: sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 7px;
+    text-align: center;
+    color: #8e8e8e;
+    margin: 5px;
+    padding: 5px;
+    background-color: #e0e0e0;
+
+    & .year {
+        font-weight: 500;
+    }
+    & .sub-date {
+        font-size: 14px;
+    }
+}
+
+//custom bullet
+.swiper-pagination {
+    top: 0px;
+    margin: 10px 0;
+    bottom: inherit !important;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+}
