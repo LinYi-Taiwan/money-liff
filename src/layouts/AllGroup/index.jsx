@@ -1,11 +1,11 @@
 import React from "react";
-import EntryBox from "@/components/organisms/EntryBox";
+import EntryBox from "@/components/atom/EntryBox";
 
 import logo from "@/images/logo.png";
 
 import { A } from "hookrouter";
 
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const mapToGroup = [
     { id: 1, name: "group1", image: logo },
@@ -15,12 +15,22 @@ const mapToGroup = [
 
 function AllGroup(props) {
     return (
-        <div className="group-container">
+        <div className={styles["group-container"]}>
             {mapToGroup.map((group, index) => (
                 <A key={index} href={"/group/" + group.id}>
-                    <EntryBox info={group} />
+                    <EntryBox>
+                        <img
+                            src={group.image}
+                            alt=""
+                            className={styles["group-sticker"]}
+                        />
+                        <p className={styles["group-name"]}>{group.name}</p>
+                    </EntryBox>
                 </A>
             ))}
+            <EntryBox>
+                <div className={styles["add-container"]}>＋</div>
+            </EntryBox>
         </div>
     );
 }

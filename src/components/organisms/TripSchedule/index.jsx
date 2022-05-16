@@ -87,12 +87,14 @@ function TripSchedule({ tripList }) {
                                                     <span>
                                                         {journey.arrivedTime}
                                                     </span>
-                                                    <Circle
-                                                        className="circle"
-                                                        isStart={
-                                                            journey.id === 1
-                                                        }
-                                                    />
+                                                    <span className="circle-component">
+                                                        <Circle
+                                                            className="circle"
+                                                            isStart={
+                                                                journey.id === 1
+                                                            }
+                                                        />
+                                                    </span>
                                                     <span>
                                                         {journey.destination}
                                                     </span>

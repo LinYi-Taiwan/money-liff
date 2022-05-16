@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../../components/atom/Container";
+import Wrapper from "../../components/atom/Wrapper";
 
 import "./index.scss";
 
@@ -8,7 +8,7 @@ import image from "@/images/logo.png";
 function GroupOverview(props) {
     return (
         <div className="overview-wrapper">
-            <Container>
+            <Wrapper>
                 <div className="statistics">
                     <img src={image} alt="" className="banner" />
                 </div>
@@ -21,7 +21,7 @@ function GroupOverview(props) {
                         最後一次編輯 <span>2022/05/04</span>
                     </div>
                 </div>
-            </Container>
+            </Wrapper>
         </div>
     );
 }

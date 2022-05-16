@@ -1,8 +1,10 @@
-.group {
-    border-radius: 6px;
-    box-shadow: 0 1px 6px -2px rgba(0, 0, 0, 0.4);
-    background-color: #fff;
-    padding: 20px;
+@import "../../components/atom/EntryBox/index.module.scss";
+
+.group-container {
+    display: grid;
+    padding: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
 
     .group-sticker {
         display: block;
@@ -24,5 +26,16 @@
         overflow: hidden;
         max-width: 140px;
         white-space: nowrap;
+    }
+
+    .add-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        font-size: 30px;
+        color: #ff6f61;
     }
 }

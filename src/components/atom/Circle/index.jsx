@@ -1,9 +1,12 @@
 import React from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 function Circle({ isStart = false }) {
-    const isStartStyle = isStart ? "start" : "";
-    return <span className={`circle ${isStartStyle}`}></span>;
+    return (
+        <span
+            className={`${styles.circle} ${isStart ? styles.start : ""}`}
+        ></span>
+    );
 }
 
 export default Circle;

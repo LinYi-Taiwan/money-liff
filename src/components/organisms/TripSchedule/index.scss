@@ -61,7 +61,8 @@
                 & span {
                     margin-right: 50px;
                 }
-                & .circle {
+                & .circle-component {
+                    display: flex;
                     position: absolute;
                     left: 59.5px;
                 }
