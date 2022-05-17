@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import EntryBox from "@/components/atom/EntryBox";
+import Modal from "../../components/molecules/Modal";
+import GroupForm from "../../components/molecules/Form";
+
+import GroupFormContent from "@/Form/Group";
 
 import logo from "@/images/logo.png";
 
@@ -14,6 +18,10 @@ const mapToGroup = [
 ];
 
 function AllGroup(props) {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const modalRef = useRef(null);
+
     return (
         <div className={styles["group-container"]}>
             {mapToGroup.map((group, index) => (
@@ -29,8 +37,19 @@ function AllGroup(props) {
                 </A>
             ))}
             <EntryBox>
-                <div className={styles["add-container"]}>＋</div>
+                <div
+                    onClick={() => modalRef.current.open()}
+                    className={styles["add-container"]}
+                >
+                    ＋
+                </div>
             </EntryBox>
+            <Modal ref={modalRef}>
+                <GroupForm
+                    GroupFormContent={GroupFormContent}
+                    modalController={modalRef}
+                />
+            </Modal>
         </div>
     );
 }
