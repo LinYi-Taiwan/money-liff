@@ -42,7 +42,7 @@ export const sendFlexMsg = createAsyncThunk(
     }
 );
 
-export const profile = createSlice({
+export const profileSlice = createSlice({
     name: "profile",
     initialState: {
         user: {
@@ -70,4 +70,4 @@ export const profile = createSlice({
 
 export const selectProfile = (state) => state.profile;
 
-export default profile.reducer;
+export default profileSlice.reducer;

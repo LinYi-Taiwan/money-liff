@@ -1,12 +1,29 @@
-import React from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import styles from "./index.module.scss";
 
-function Input(props) {
+const Input = forwardRef(({ register, formContent }, ref) => {
+    console.log("ref", ref);
+    useImperativeHandle(
+        ref,
+        () => ({
+            isValidate: () => {},
+        }),
+        []
+    );
     return (
         <>
-            <input type="text" />
+            <label htmlFor={formContent.label}>
+                {formContent.label}
+                {formContent.required && <span>*</span>}
+            </label>
+            <input
+                {...register(formContent.name, {
+                    required: formContent.required,
+                })}
+                type={formContent.dataType}
+            />
         </>
     );
-}
+});
 
 export default Input;

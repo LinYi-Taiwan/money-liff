@@ -1,9 +1,31 @@
 .form-container {
     display: flex;
-    justify-content: center;
+    position: relative;
     align-items: flex-start;
     flex-direction: column;
     padding: 24px 16px;
+
+    .form-cell {
+        margin-bottom: 24px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-family: GenJyuuGothic;
+            font-size: 12px;
+            letter-spacing: 0.65px;
+            color: #000;
+
+            span {
+                color: red;
+            }
+        }
+        .error-msg {
+            color: red;
+            font-size: 12px;
+            letter-spacing: 0.65px;
+        }
+    }
 
     & .form-header {
         display: flex;
@@ -13,8 +35,23 @@
         font-size: 14px;
         letter-spacing: 0.7px;
         margin-bottom: 24px;
+    }
 
-        span {
+    & .footer-create {
+        position: fixed;
+        bottom: 24px;
+        width: calc(100% - 32px);
+        height: 40px;
+        // border-radius: 3px !important;
+        background-color: #ff6f61;
+        font-family: GenJyuuGothic;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+
+        &.disabled {
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.2);
         }
     }
 }

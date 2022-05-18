@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { selectProfile } from "@/store/slice/liff";
 import { getProfile, sendFlexMsg } from "@/store/slice/liff";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "@/images/logo.png";
 
 import { A } from "hookrouter";
 import "./index.scss";
