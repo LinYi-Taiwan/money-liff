@@ -1,6 +1,7 @@
 import liff from "@line/liff/dist/lib";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { flexBox } from "@/layouts/LineOnly";
+import { useRedux } from "../../util/hook/useRedux";
 
 import {
     lineInit,
@@ -71,5 +72,12 @@ export const profileSlice = createSlice({
 });
 
 export const selectProfile = (state) => state.profile;
+
+const actionsMap = {
+    getProfile,
+    sendFlexMsg,
+};
+console.log(profileSlice.actions);
+export const useProfile = () => useRedux(selectProfile, actionsMap);
 
 export default profileSlice.reducer;

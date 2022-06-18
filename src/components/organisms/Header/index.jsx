@@ -2,14 +2,17 @@ import React, { useEffect } from "react";
 import { selectProfile } from "@/store/slice/liff";
 import { getProfile, sendFlexMsg } from "@/store/slice/liff";
 import { useDispatch, useSelector } from "react-redux";
+import { useProfile } from "../../../store/slice/liff";
+
+import { A } from "hookrouter";
 
 import "./index.scss";
 
 function Header(props) {
-    const dispatch = useDispatch();
+    const [profileState, { getProfile }] = useProfile();
 
     useEffect(() => {
-        dispatch(getProfile());
+        getProfile();
     }, []);
 
     const profile = useSelector(selectProfile);
@@ -30,8 +33,12 @@ function Header(props) {
             </div>
 
             <div className="profile">
-                <div className="user-name">{profile.user.name}</div>
-                <img src={profile.user.picture} alt="" className="sticker" />
+                <div className="user-name">{profileState.user.name}</div>
+                <img
+                    src={profileState.user.picture}
+                    alt=""
+                    className="sticker"
+                />
             </div>
         </div>
     );
