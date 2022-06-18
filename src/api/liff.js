@@ -1,4 +1,3 @@
-import axios from "axios";
 import liff from "@line/liff";
 
 export const getUserData = async () => {

@@ -3,7 +3,6 @@ import { selectProfile } from "@/store/slice/liff";
 import { getProfile, sendFlexMsg } from "@/store/slice/liff";
 import { useDispatch, useSelector } from "react-redux";
 
-import { A } from "hookrouter";
 import "./index.scss";
 
 function Header(props) {

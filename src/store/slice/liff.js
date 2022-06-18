@@ -9,16 +9,18 @@ import {
     getLineUserProfile,
 } from "../../util/line";
 
+import { isUserOrRegister } from "@/api/user";
+
 export const getProfile = createAsyncThunk("liff/getProfile", async () => {
     await lineInit();
-
+    console.log("im get profile");
     if (!liff.isLoggedIn()) {
         liff.login();
-        // alert("not login");
     }
 
     const data = getLineUserProfile();
-    console.log("shareResult", data);
+    await isUserOrRegister(data);
+
     return data;
 });
 
