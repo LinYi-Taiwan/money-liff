@@ -12,7 +12,7 @@ export default {
         },
         {
             label: "人數",
-            name: "user_limit",
+            name: "userLimit",
             formType: "count",
             dataType: "number",
             required: true,
@@ -23,7 +23,7 @@ export default {
         },
         {
             label: "群組圖片",
-            name: "image_url",
+            name: "imageUrl",
             formType: "upload",
             dataType: "text",
             required: false,

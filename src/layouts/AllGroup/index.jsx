@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import EntryBox from "@/components/atom/EntryBox";
 import Modal from "../../components/molecules/Modal";
 import GroupForm from "../../components/molecules/Form";
@@ -11,17 +11,20 @@ import { A } from "hookrouter";
 import styles from "./index.module.scss";
 
 function AllGroup(props) {
-    const [groupState, { createGroup }] = useGroup();
+    const [groupState, { createGroup, getGroup }] = useGroup();
     const { groupList } = groupState;
     const modalRef = useRef(null);
 
+    useEffect(() => {
+        getGroup();
+    }, []);
     return (
         <div className={styles["group-container"]}>
             {groupList.map((group, index) => (
-                <A key={index} href={"/group/" + group.id}>
+                <A key={index} href={"/group/" + group.uuid}>
                     <EntryBox>
                         <img
-                            src={group.image}
+                            src={group.image_url}
                             alt=""
                             className={styles["group-sticker"]}
                         />
